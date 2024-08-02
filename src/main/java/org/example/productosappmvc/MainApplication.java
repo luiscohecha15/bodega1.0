@@ -3,9 +3,11 @@ package org.example.productosappmvc;
 import controller.LoginController;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import view.LoginView;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class MainApplication extends Application {
@@ -27,6 +29,6 @@ public class MainApplication extends Application {
         }
     }
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

@@ -1,10 +1,7 @@
 package view;
-
-
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import model.Product;
-
 
 public class ProductsView extends VBox {
     private TableView<Product> tablaProductos;
@@ -12,6 +9,7 @@ public class ProductsView extends VBox {
     private TextField txtNombre;
     private TextField txtPrecio;
     private TextField txtUbicacion;
+
     public ProductsView(){
         // Campos de búsqueda
         txtNombre = new TextField();
@@ -39,10 +37,13 @@ public class ProductsView extends VBox {
         TableColumn<Product, String> colUbicacion = new TableColumn<>("Ubicación");
         colUbicacion.setCellValueFactory(cellData -> cellData.getValue().ubicacionProperty());
         tablaProductos.getColumns().addAll(colId, colNombre, colPrecio, colTipo, colUbicacion);
-        this.setSpacing(10);
-        this.getChildren().addAll(searchBox, btnConsultar, tablaProductos);
-    }
 
+        // Etiqueta adicional
+        Label lblInfo = new Label("Trabajo realizado por: Luis Alfonso Cohecha Suarez\nCiudad: Armenia\nAño: 2024");
+
+        this.setSpacing(10);
+        this.getChildren().addAll(searchBox, btnConsultar, tablaProductos, lblInfo);
+    }
 
     // Getters para los nuevos campos
     public TextField getTxtNombre() { return txtNombre; }
@@ -52,5 +53,3 @@ public class ProductsView extends VBox {
     public TableView<Product> getTablaProductos() { return tablaProductos; }
     public Button getBtnConsultar() { return btnConsultar; }
 }
-
-
